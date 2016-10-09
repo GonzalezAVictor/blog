@@ -8,12 +8,17 @@ use Robtor\Http\Requests;
 
 use Robtor\Usuario;
 
+use Illuminate\Support\Facades\Auth;
+
 class UsuarioController extends Controller
 {
     
 	public function store(Request $request){
-		//crear un usuario
-		//Namespace / Modelo
+		$this->validate($request, [
+			'nombre' => 'required',
+			'email'  => 'required|email',
+			'password'  => 'required|confirmed',
+			]);
 
 		\Robtor\Usuario::create([
 			'nombre' => $request['nombreUsuario'],
@@ -24,11 +29,16 @@ class UsuarioController extends Controller
 		return $request['nombreUsuario']." se ha creado con el correo ".$request['emailUsuario'];
 	}
 
-	public function validarIngresoUsuario(Request $request){
-		dd('hay que validar el ingreso del usuario ' . $request['nombreUsuario']);
-	}
-
-
+	public function validarIngresoUsuario(Request $request)
+    {
+    	$email = $request['email'];
+    	$password = $request['password'];
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            return redirect()->intended('paginaPrincipalUsuario');
+        } else {
+        	dd('no encontrado');
+        }
+    }
 
 
 

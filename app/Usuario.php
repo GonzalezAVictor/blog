@@ -3,8 +3,13 @@
 namespace Robtor;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\UserTrait;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Usuario extends Model
+
+class Usuario extends User
 {
 	protected $table = 'usuario';
     /**

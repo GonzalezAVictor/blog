@@ -5,8 +5,10 @@
 	<title></title>
 </head>
 <body>
-	Aqui se mostrara el restaurante Aleatorio
+	Aqui se mostrara el restaurante Aleatorio <br>	
 
+	Nombre restaurante: <b>{{$restaurante->nombre}}</b>
+	ID restaurante: <b>{{$restaurante->id}}</b>
 
 </body>
 </html>

@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Robtor\User::class,
+            'model' => Robtor\Usuario::class,
         ],
 
         // 'users' => [

@@ -19,15 +19,12 @@ Route::get('prueba', 'DocumentosController@prueba'); 	// Se va a DosumentosContr
 
 Route::get('aRestaurantes', 'DocumentosController@aRestaurantes');		// Se va a DocumentosController y ejecuta aRestaurantes
 
-Route::get('paginaPrincipalUsuario', 'DocumentosController@paginaPrincipalUsuario');
+Route::get('paginaPrincipalUsuario', 'DocumentosController@paginaPrincipalUsuario')->name('paginaPrincipalUsuario');
 
 Route::get('restaurantesCategorias', 'DocumentosController@restaurantesCategorias');
 
 Route::get('restauranteAleatorio', 'DocumentosController@restauranteAleatorio');
 
-//Documento------------------------------    Documento    ---------------------------------------------
-
-Route::resource('prueba1', 'DocumentosContoller');
 
 //Categoria------------------------------    Categoria    ---------------------------------------------
 

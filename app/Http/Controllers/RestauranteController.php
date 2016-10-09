@@ -53,14 +53,18 @@ class RestauranteController extends Controller
 
 		$categoria_id = $request['tags'][0];
 
+		if (!$categoria_id) {
+			return dd('no pusiste categorias');
+		}
+
 		$restaurantes = Restaurant::whereHas('categorias', function ($query) use ($categoria_id)
 		{
 			$query->where('categoria_id', '=', $categoria_id);	
 		})->with('categorias')->get();
 
-		dd($restaurantes->random());
+		$restaurante = $restaurantes->random();
 
-
+		return view('restauranteAleatorio', ['restaurante' => $restaurante]);
 
 
 	}

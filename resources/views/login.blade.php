@@ -13,13 +13,13 @@
 				{!! Form::open(['route' => 'usuario.store', 'method' => 'POST']) !!}
 					<div>
 						{!! Form::label('Nombre') !!}
-						{!! Form::text('nombreUsuario') !!}
+						{!! Form::text('nombre') !!}
 						{!! Form::label('Email') !!}
-						{!! Form::email('emailUsuario') !!}
+						{!! Form::email('email') !!}
 						{!! Form::label('Contraseña') !!}
-						{!! Form::password('pwUsuario') !!}
+						{!! Form::password('password') !!}
 						{!! Form::label('Confirmar contraseña') !!}
-						{!! Form::password('confirmarPW') !!}
+						{!! Form::password('password_confirmation') !!}
 						{!! Form::submit('GO') !!}
 					</div>
 				{!! Form::close() !!}
@@ -30,10 +30,10 @@
 			<div class="ED">
 				{!! Form::open(['route' => 'validarIngresoUsuario', 'method' => 'POST']) !!}
 					<div>
-						{!!Form::label('Nombre')!!}
-						{!!Form::text('nombreUsuario')!!}
+						{!!Form::label('Email')!!}
+						{!!Form::email('email')!!}
 						{!! Form::label('Contraseña') !!}
-						{!!Form::password('pwUsuario')!!}
+						{!!Form::password('password')!!}
 						{!! Form::submit('GO') !!}
 					</div>
 				{!! Form::close() !!}
