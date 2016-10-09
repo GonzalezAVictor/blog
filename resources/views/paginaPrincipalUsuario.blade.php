@@ -15,7 +15,7 @@
 			{{Form::close()}}
 		</div>
 		<div>
-			{!!Form::open(['route' => 'mostrarRestauranteAleatorio',  'method' => 'POST'])!!}
+			{!!Form::open(['route' => 'mostrarRestauranteAleatorio',  'method' => 'GET'])!!}
 			{!! Form::select('tags[]', $categoria, null, ['multiple']) !!}
 			{!!Form::submit('Random')!!}
 			{!!Form::close()!!}

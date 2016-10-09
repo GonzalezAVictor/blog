@@ -51,18 +51,15 @@ class RestauranteController extends Controller
 
 	public function mostrarRestauranteAleatorio(Request $request){
 
-		//En request estan los id de las categorias elegidas
-		//return "Mostrar restaurante Aleatorio en la ventana restauranteAleatorio";
+		$categoria_id = $request['tags'][0];
 
-		$restaurantes_id = Restaurant::all()->lists('id');
+		$restaurantes = Restaurant::whereHas('categorias', function ($query) use ($categoria_id)
+		{
+			$query->where('categoria_id', '=', $categoria_id);	
+		})->with('categorias')->get();
 
-		//Aqui tienes que obtener los restaurantes que tengan las categorias seleccionadas
+		dd($restaurantes->random());
 
-		$ultimoRestaurante = last(last($restaurantes_id));
-
-		$idRandom = mt_rand(1, $ultimoRestaurante);
-
-		dd($idRandom);
 
 
 
