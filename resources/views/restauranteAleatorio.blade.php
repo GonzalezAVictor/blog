@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link href="css/styles.css" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title></title>
 </head>
 <body>
-	Aqui se mostrara el restaurante Aleatorio <br>	
+	<div class = "rAU">
 
-	Nombre restaurante: <b>{{$restaurante->nombre}}</b>
-	ID restaurante: <b>{{$restaurante->id}}</b>
+		<div>
+			{{ Form::image($restaurante->logo) }}
+		</div>
+	</div>
+	<div class = "rAD">
+		{{$restaurante->nombre}} <br>
+		{{$restaurante->eslogan}} <br>
+		{{$restaurante->horaInicio}}  -  {{$restaurante->horaFinal}} <br>
+		{{$restaurante->ubicacion}} <br>
+		{{$restaurante->descripcion}} <br>
 
+		@foreach($restaurante->categorias as $categories)
+			{{$categories->nombre}}
+		@endforeach
+		<br>
+		<br>
+		Aqui se deben de mostrar las pormociones que éste restaurante tenga
+
+	</div>
 </body>
 </html>

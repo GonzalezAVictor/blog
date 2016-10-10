@@ -21,12 +21,12 @@ class UsuarioController extends Controller
 			]);
 
 		\Robtor\Usuario::create([
-			'nombre' => $request['nombreUsuario'],
-			'email' => $request['emailUsuario'],
-			'password' => bcrypt($request['pwUsuario']),
+			'nombre' => $request['nombre'],
+			'email' => $request['email'],
+			'password' => bcrypt($request['password']),
 			]);
 
-		return $request['nombreUsuario']." se ha creado con el correo ".$request['emailUsuario'];
+		return redirect()->intended('paginaPrincipalUsuario');
 	}
 
 	public function validarIngresoUsuario(Request $request)
@@ -35,6 +35,8 @@ class UsuarioController extends Controller
     	$password = $request['password'];
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             return redirect()->intended('paginaPrincipalUsuario');
+        } else  if (Auth::attempt(['nombre' => $email, 'password' => $password])){
+        	return redirect()->intended('paginaPrincipalUsuario');
         } else {
         	dd('no encontrado');
         }

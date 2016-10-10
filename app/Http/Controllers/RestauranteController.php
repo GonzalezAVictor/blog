@@ -43,10 +43,9 @@ class RestauranteController extends Controller
 	}
 
 	public function mostrarRestaurantes(Request $request){
-		//Filtrar los restaurantes con las categorias elegidas y asignarlas a
-		//una variable "restaurantesEncontrados"
-		$restaurantes = Restaurant::all();
+		$restaurantes = Restaurant::where('nombre', 'LIKE', '%'.$request->elementoABuscar.'%')->get();
 		dd($restaurantes->all());
+		//Pasar a la ventana paa mostrar los restaurantes
 	}
 
 	public function mostrarRestauranteAleatorio(Request $request){

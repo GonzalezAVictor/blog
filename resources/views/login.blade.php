@@ -31,7 +31,7 @@
 				{!! Form::open(['route' => 'validarIngresoUsuario', 'method' => 'POST']) !!}
 					<div>
 						{!!Form::label('Email')!!}
-						{!!Form::email('email')!!}
+						{!!Form::text('email')!!}
 						{!! Form::label('Contraseña') !!}
 						{!!Form::password('password')!!}
 						{!! Form::submit('GO') !!}
