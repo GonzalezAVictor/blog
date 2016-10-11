@@ -7,7 +7,7 @@
 				<li><a href="#">Restaurante</a></li>
 			</ul>
 		</nav>
-		{!!Form::open(['route' => 'restaurante.store', 'method' => 'POST' ,'class' => 'register'])!!}
+		{!!Form::open(['route' => 'restaurante.store', 'method' => 'POST' ,'class' => 'register', 'files' => true])!!}
 			{!!Form::label('Restaurante')!!}
 			{!!Form::text('nombreRestaurante')!!}
 			{!!Form::label('Horario inicio')!!}

@@ -15,6 +15,16 @@ class RestauranteController extends Controller
 
 	public function store(Request $request){
 		//crear un Restaurant
+		//Como los nombres de los restaurantes van a ser únicos, entonces
+		//puedes llamar a la imagen como el nombre de restarnate
+		$file = $request->file('logoRestaurante');
+
+		$nombreImagen = $request->nombreRestaurante . '.' . $file->getClientOriginalExtension();
+
+		$path = public_path() . '\images\logosRestaurantes';
+
+		$file->move($path, $nombreImagen);
+
 		$restaurante = new Restaurant;
 			$restaurante->nombre = $request['nombreRestaurante'];
 			$restaurante->horarioInicio = $request['horarioInicioRestaurante'];
@@ -22,13 +32,13 @@ class RestauranteController extends Controller
 			$restaurante->ubucacion = $request['ubucacionRestaurante'];
 			$restaurante->eslogan = $request['esloganRestaurante'];
 			$restaurante->descripcion = $request['descripcionRestaurante'];
-			$restaurante->logo = $request->logoRestaurante;
+			$restaurante->logo = $nombreImagen;
 		
 		$restaurante->save();
 
 		$restaurante->categorias()->sync($request['categorias']);
 
-		return redirect()->route('mostrarRestauranteAleatorio');
+		// return redirect()->route('mostrarRestauranteAleatorio');
 	}
 
 	public function destroy($id){
@@ -50,15 +60,19 @@ class RestauranteController extends Controller
 
 	public function mostrarRestauranteAleatorio(Request $request){
 
-		$categoria_id = $request['tags'][0];
+		$categorias_id = $request->tags;
 
-		if (!$categoria_id) {
+		shuffle($categorias_id);
+
+		$randCategoria = $categorias_id[0];
+
+		if (!$randCategoria) {
 			return dd('no pusiste categorias');
 		}
 
-		$restaurantes = Restaurant::whereHas('categorias', function ($query) use ($categoria_id)
+		$restaurantes = Restaurant::whereHas('categorias', function ($query) use ($randCategoria)
 		{
-			$query->where('categoria_id', '=', $categoria_id);	
+			$query->where('categoria_id', '=', $randCategoria);	
 		})->with('categorias')->get();
 
 		$restaurante = $restaurantes->random();

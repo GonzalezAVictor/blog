@@ -9,13 +9,13 @@
 	<div class = "rAU">
 
 		<div>
-			{{ Form::image($restaurante->logo) }}
+			<img src="images\logosRestaurantes\{{$restaurante->logo}}" alt="algo">
 		</div>
 	</div>
 	<div class = "rAD">
 		{{$restaurante->nombre}} <br>
 		{{$restaurante->eslogan}} <br>
-		{{$restaurante->horaInicio}}  -  {{$restaurante->horaFinal}} <br>
+		{{$restaurante->horarioInicio}}  -  {{$restaurante->horarioFinal}} <br>
 		{{$restaurante->ubicacion}} <br>
 		{{$restaurante->descripcion}} <br>
 
@@ -25,6 +25,8 @@
 		<br>
 		<br>
 		Aqui se deben de mostrar las pormociones que éste restaurante tenga
+		<br>
+		<button>Regresar</button>
 
 	</div>
 </body>
