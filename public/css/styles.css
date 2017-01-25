@@ -186,45 +186,9 @@ a {
 
 /*----------------------------------------------------------------------------------------------*/
 
-.rightTop{
-	width: 100%;
-	height: 40%;
-	display: flex;
-}
-
-/*----------------------------------------------------------------------------------------------*/
-
-.rightTL{
-	padding: 3px;
-	width: 40%;
-	height: 100%;
+.right div{
+	width: 49%;
 	display: inline-block;
-}
-
-/*----------------------------------------------------------------------------------------------*/
-
-.rightTR{
-	display: inline-block;
-	padding: 10px;
-	width: 59%;
-	height: 100%;
-	top: 100%;
-}
-
-.rightTR ul li{
-	list-style: none;
-}
-
-/*----------------------------------------------------------------------------------------------*/
-
-.rightBot{
-	width: 100%;
-	height: 40%;
-	margin: 15px;
-}
-
-.rightBot ul{
-	list-style: none;
 }
 
 /*----------------------------------------------------------------------------------------------*/
@@ -337,6 +301,7 @@ li.salir{
 	width: 60%;
 	background-color: #B5B9BD;
 	padding: 3% 5%;
+	display: inline-block;
 }
 
 .ppuLeft-table{
@@ -354,10 +319,26 @@ li.salir{
 	text-align: center;
 }
 
+.navegador{
+   list-style-type: none;
+   text-align: center;
+}
+
+.navegador li{
+   display: inline;
+   text-align: center;
+   margin: 0 10px 0 0;
+}
+
 /*----------------------------------------------------------------------------------------------*/
 
 .ppuRight{
-
+	height: 100vh;
+	width: 40%;
+	background-color: #B5B9BD;
+	padding: 3% 5%;
+	display: inline-block;
+	vertical-align: top;
 }
 
 /*----------------------------------------------------------------------------------------------*/

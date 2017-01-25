@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Restaurante extends Migration
+class CreateAdministrador extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,10 @@ class Restaurante extends Migration
      */
     public function up()
     {
-        Schema::create('restaurante', function (Blueprint $table) {
+        Schema::create('administrador', function (Blueprint $table) {
             $table->increments('id');
             $table->String('nombre');
-            $table->String('codigoRestaurante');
-            $table->String('horarioInicio');
-            $table->String('horarioFinal');
-            $table->String('ubucacion');
-            $table->String('eslogan');
-            $table->String('descripcion');
-            $table->text('logo'); 
+            $table->String('email');
             $table->String('password');
 
             $table->timestamps();
@@ -35,6 +29,6 @@ class Restaurante extends Migration
      */
     public function down()
     {
-        Schema::drop('restaurante');
+        Schema::drop('administrador');
     }
 }

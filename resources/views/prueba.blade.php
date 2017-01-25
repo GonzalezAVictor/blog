@@ -8,20 +8,22 @@
 			</ul>
 		</nav>
 		{!!Form::open(['route' => 'restaurante.store', 'method' => 'POST' ,'class' => 'register', 'files' => true])!!}
-			{!!Form::label('Restaurante')!!}
-			{!!Form::text('nombreRestaurante')!!}
-			{!!Form::label('Horario inicio')!!}
-			{!!Form::time('horarioInicioRestaurante')!!}
-			{!!Form::label('Horario Final')!!}
-			{!!Form::time('horarioFinalRestaurante')!!}
-			{!!Form::label('Ubucación')!!}
-			{!!Form::text('ubucacionRestaurante')!!}
-			{!!Form::label('Eslogan')!!}
-			{!!Form::text('esloganRestaurante')!!}
-			{!!Form::label('Descripcion')!!}
-			{!!Form::text('descripcionRestaurante')!!}
-			{!!Form::label('Logo')!!}
-			{!!Form::file('logoRestaurante')!!}
+			{!! Form::label('Restaurante') !!}
+			{!! Form::text('nombreRestaurante') !!}
+			{!! Form::label('Horario inicio') !!}
+			{!! Form::time('horarioInicioRestaurante') !!}
+			{!! Form::label('Horario Final') !!}
+			{!! Form::time('horarioFinalRestaurante') !!}
+			{!! Form::label('Ubucación') !!}
+			{!! Form::text('ubucacionRestaurante') !!}
+			{!! Form::label('Eslogan') !!}
+			{!! Form::text('esloganRestaurante') !!}
+			{!! Form::label('Descripcion') !!}
+			{!! Form::text('descripcionRestaurante') !!}
+			{!! Form::label('Logo') !!}
+			{!! Form::file('logoRestaurante') !!}
+			{!! Form::label('codigo restaurante') !!}
+			{!! Form::text('codigoRestaurante') !!}
 
 			{!! Form::select('categorias[]', $categoria, null, ['multiple']) !!}
 
@@ -30,25 +32,12 @@
 
 	</div>
 	<div class="right">
-		<div class="rightTop">
-			<div class="rightTL">
-				<img class="image" src="prueba.jpg" alt="Imagen">
-			</div>
-			<div class="rightTR">
-				<ul>
-					<li>...</li>
-					<li>...</li>
-					<li>...</li>
-				</ul>
-			</div>
+		<div>
+			imagen
+			Datos Resaurante
 		</div>
-		<div class="rightBot">
-			<ul>
-				<li>...</li>
-				<li>...</li>
-				<li>...</li>
-				<li>...</li>
-			</ul>
+		<div>
+			Asignacion de promociones
 		</div>
 	</div>
 @stop

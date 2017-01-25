@@ -156,6 +156,11 @@ return [
         Robtor\Providers\EventServiceProvider::class,
         Robtor\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider::class,  
+        Vinkla\Pusher\PusherServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
+
 
     ],
 
@@ -204,6 +209,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
+        'PushNotification' => Davibennun\LaravelPushNotification\Facades\PushNotification::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 

@@ -24,7 +24,11 @@
 		@endforeach
 		<br>
 		<br>
-		Aqui se deben de mostrar las pormociones que éste restaurante tenga
+			@foreach($promociones as $promocion)
+				{{$promocion->id}} , {{ $promocion->nombre }} , {{ $promocion->tipo_promocion }} 
+				{!! link_to_route('usuario.seguirPromocion', $title = 'Activar', $parameters = $promocion->id, $attributes = [ 'class' => 'btn btn-info']); !!}     
+				{!! link_to_route('compartirPromocion', $title = 'Compartir', $parameters = $promocion->id, $attributes = [ 'class' => 'btn btn-info']); !!} <br>
+			@endforeach
 		<br>
 		<button>Regresar</button>
 

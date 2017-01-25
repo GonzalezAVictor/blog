@@ -16,8 +16,14 @@ class Promocion extends Migration
             $table->increments('id');
             $table->String('nombre');
             $table->String('detalles');
-            $table->String('horaInicio');
-            $table->String('horaFinal');
+            $table->String('horaInicio')->nullable();
+            $table->String('horaFinal')->nullable();
+            $table->String('tipo_promocion');
+            $table->String('cantidad_disponible')->nullable();
+
+            $table->integer('restautante_id')->unsigned();
+
+            $table->foreign('restautante_id')->references('id')->on('restaurante')->onDelete('cascade');
 
             $table->timestamps();
         });

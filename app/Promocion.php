@@ -11,12 +11,16 @@ class Promocion extends Model
 
 
     protected $fillable = [
-    	'nombre', 'detalles', 'horaInicio', 'horaFinal'
+    	'nombre', 'detalles', 'horaInicio', 'horaFinal', 'restaurante_id'
     ];
 
     //
     public function restaurante(){
     	$this->belongsTo('Robtor\Restaurant');
+    }
+
+    public function usuarios(){
+    	return $this->belongsToMany('Robtor\Usuario')->withTimestamps();
     }
  
 }

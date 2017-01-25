@@ -42,4 +42,13 @@ class DocumentosController extends Controller{
 		return view('restauranteAleatorio');
 	}
 
+	public function pruebaJson(){
+
+		$categorias = Categoria::all();
+
+		$cate = array('categorias' => $categorias);
+
+		return response()->json($cate);
+	}
+
 }

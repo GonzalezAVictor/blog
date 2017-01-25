@@ -10,7 +10,7 @@ class Restaurant extends Model
 	protected $table = 'restaurante';
     
     protected $fillable = [
-    'nombre', 'horarioInicio', 'horarioFinal', 'ubucacion', 'eslogan', 'descripcion', 'logo'
+    'nombre', 'horarioInicio', 'horarioFinal', 'ubucacion', 'eslogan', 'descripcion', 'logo', 'password', 'codigoRestaurante'
     ];
 
     public function categorias(){

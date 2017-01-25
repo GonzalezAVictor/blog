@@ -6,7 +6,7 @@
 	<title></title>
 </head>
 <body>
-	
+
 	<div class = "ppuLeft">
 		<div>
 			{{Form::open(['route' => 'mostrarRestaurantes',  'method' => 'POST'])}}
@@ -19,11 +19,15 @@
 			{!! Form::select('tags[]', $categoria, null, ['multiple']) !!}
 			{!!Form::submit('Random')!!}
 			{!!Form::close()!!}
+		</div><div>
+			{!! link_to_route('promocionesSiguiendo', $title = 'Perfil', $parameters = null , $attributes = [ 'class' => 'btn btn-info']); !!}
 		</div>
-	</div>
-
-	<div clas = "ppuRight">
-		
+	</div><div class = "ppuRight">
+		{{ Form::open(['route' => 'validarCodigoRestaurante', 'method' => 'POST']) }}
+		{{ Form::label('Codigo Promocion') }} <br>
+		{{ Form::text('codigoPromocion') }}
+		{{ Form::submit('GO') }}
+		{{ Form::close() }}
 	</div>
 
 

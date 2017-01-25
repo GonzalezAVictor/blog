@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Laravel</title>
+        <script src="//js.pusher.com/3.0/pusher.min.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -36,10 +37,22 @@
         </style>
     </head>
     <body>
+        <script>
+            Pusher.log = function(msg) {
+                console.log(msg);
+            };
+            var pusher = new Pusher("{{env("PUSHER_KEY")}}")
+            var channel = pusher.subscribe('test-channel');
+            channel.bind('test-event', function(data) {
+                alert(data.text);
+            });
+        </script>
+
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
             </div>
         </div>
     </body>
+
 </html>

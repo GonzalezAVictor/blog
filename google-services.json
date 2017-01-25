@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1065461304741",
+    "firebase_url": "https://bestdish-a2b5d.firebaseio.com",
+    "project_id": "bestdish-a2b5d",
+    "storage_bucket": "bestdish-a2b5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065461304741:android:f643a189e2e082f9",
+        "android_client_info": {
+          "package_name": "com.bestdish.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065461304741-cbr00uhr40te5p63scme3r1kqelifk8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

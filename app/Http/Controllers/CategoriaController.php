@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Robtor\Http\Requests;
 
+use Robtor\Categoria;
+
 class CategoriaController extends Controller
 {
     /**
@@ -83,5 +85,10 @@ class CategoriaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function categories(){
+        $categories = Categoria::all();
+        return response()->json($categories);
     }
 }

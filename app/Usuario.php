@@ -30,7 +30,9 @@ class Usuario extends User
         'password', 'remember_token',
     ];
 
-
+    public function promociones(){
+        return $this->belongsToMany('Robtor\Promocion');
+    }
 
 
 }
